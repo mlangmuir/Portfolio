@@ -1,14 +1,30 @@
+import GlobalStyle from "./globalStyle";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 import styled from "styled-components";
 
 const App = () => {
   return (
-    <Head>Portfolio</Head>
+    <>
+      <GlobalStyle />
+      <Header />
+      <Wrapper>
+        <Home />
+        <Projects />
+        <Contact />
+      </Wrapper>
+      <Footer />
+    </>
   );
 }
 
-const Head = styled.h1`
-  font-size: 500px;
-  color: navy;
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
 `;
+
 
 export default App;
