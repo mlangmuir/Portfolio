@@ -3,12 +3,16 @@ import Github from "../assets/github-logo.png";
 import Linkedin from "../assets/linkedin-logo.png";
 import Twitter from "../assets/twitter-logo.png";
 import Email from "../assets/email-logo.png";
-import React, { forwardRef, useRef } from 'react'
+import { useContext } from "react";
+import { Context } from "../Context";
 
-const Home = forwardRef(({ onBackClick }, ref) => {
+const Home = () => {
+
+    const { scrollToAbout } = useContext(Context);
+
     return (
         <>
-        <Wrapper ref={ref}>
+        <Wrapper>
             <Container>
                 <Intro>Hello, I'm</Intro>
                 <Name>Matthew Langmuir.</Name>
@@ -27,17 +31,13 @@ const Home = forwardRef(({ onBackClick }, ref) => {
                         <Logo src={Email} alt="Email logo" />
                     </a>
                 </LogoDiv>
-                <ReadMore>
-                    <A href="https://drive.google.com/file/d/1lk-1RKra021oQMynGT0iTYEIIx_X4_tM/view?usp=sharing" target="_blank" rel="noreferrer">
-                        Read More About Me
-                    </A>
-                </ReadMore>
+                <ReadMore onClick={scrollToAbout}>Read More About Me</ReadMore>
             </Container>
         </Wrapper>
         <BackgroundText>Hello<p style={{fontSize: "380px"}}>World</p></BackgroundText>
         </>
     );
-})
+}
 
 const Wrapper = styled.div`
     display: flex;

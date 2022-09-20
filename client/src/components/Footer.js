@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const Header = () => {
+const Footer = () => {
     return (
         <div></div>
     );
 }
 
-export default Header;
+export default Footer;

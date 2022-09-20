@@ -1,14 +1,19 @@
+import { useContext } from "react";
 import styled from "styled-components";
 import aboutPic from "../assets/new-portfolio-photo.jpg"
+import { Context } from "../Context";
 
 const About = () => {
+
+    const { aboutSection, scrollToProjects } = useContext(Context);
+
     return (
-        <Wrapper>
+        <Wrapper ref={aboutSection}>
             <Container>
                 <Title>About Me.</Title>
                 <PhotoTextDiv>
-                    <TextDiv>
-                        <Paragraph>Hello, my name is Matthew and I am passionate about creating web applications and learning new technologies. Through projects done at Concordia University and Wonders Academy, I have become proficient with the MERN stack.</Paragraph>
+                    <div>
+                        <Paragraph>Hello, my name is Matthew and I am passionate about creating web applications and learning new technologies. Through projects done at Concordia University and Wonders Academy, I have gained the capacity to build full-stack applications that offer an exceptional user experience.</Paragraph>
                         <Paragraph>Here are the technologies that I have used for my projects:</Paragraph>
                         <ListDiv>
                             <ColumnOne>
@@ -23,12 +28,8 @@ const About = () => {
                                 <li>CSS</li>
                             </ColumnTwo>
                         </ListDiv>
-                        <SeeProjects>
-                            <A href="https://drive.google.com/file/d/1lk-1RKra021oQMynGT0iTYEIIx_X4_tM/view?usp=sharing" target="_blank" rel="noreferrer">
-                                See My Projects
-                            </A>
-                        </SeeProjects>
-                    </TextDiv>
+                        <SeeProjects onClick={scrollToProjects}>See My Projects</SeeProjects>
+                    </div>
                     <AboutPic src={aboutPic} alt="Photo of Matthew Langmuir" />
                 </PhotoTextDiv>
             </Container>
@@ -58,10 +59,6 @@ const PhotoTextDiv = styled.div`
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
-`;
-
-const TextDiv = styled.div`
-
 `;
 
 const ListDiv = styled.div`
@@ -108,7 +105,7 @@ const Paragraph = styled.p`
 `;
 
 const AboutPic = styled.img`
-    height: 400px;
+    height: 425px;
 `;
 
 export default About;

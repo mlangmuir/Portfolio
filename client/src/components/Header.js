@@ -1,25 +1,11 @@
 import styled from "styled-components";
 import LogoSrc from "../assets/logo.png";
-import { useRef } from "react";
+import { useContext } from "react";
+import { Context } from "../Context";
 
 const Header = () => {
 
-    const scrollToHome = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-
-    const scrollToAbout = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-
-    const scrollToProjects = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-
-    const scrollToContact = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-
+    const { scrollToHome, scrollToAbout, scrollToProjects, scrollToContact } = useContext(Context);
 
     return (
         <Wrapper>
