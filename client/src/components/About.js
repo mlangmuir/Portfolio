@@ -44,6 +44,8 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     align-items: flex-start;
+    background-color: black;
+    padding-bottom: 100px;
 `;
 
 const Container = styled.div`
@@ -90,10 +92,6 @@ const SeeProjects = styled.div`
         cursor: pointer;
         opacity: 70%;
     }
-`;
-
-const A = styled.a`
-    text-decoration: none;
 `;
 
 const Paragraph = styled.p`

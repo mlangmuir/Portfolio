@@ -46,7 +46,7 @@ const Wrapper = styled.div`
     width: 100%;
     height: 100vh;
     z-index: 1;
-    background-color: transparent;
+    background-color: black;
 `;
 
 const Container = styled.div`
@@ -88,10 +88,6 @@ const ReadMore = styled.div`
         cursor: pointer;
         opacity: 70%;
     }
-`;
-
-const A = styled.a`
-    text-decoration: none;
 `;
 
 const LogoDiv = styled.div`
