@@ -1,110 +1,151 @@
 import styled from "styled-components";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Context } from "../Context";
-import theShoestringTraveller from "../assets/the-shoestring-traveller.png";
-import matthewLangmuirTutoring from "../assets/matthew-langmuir-tutoring.png";
-import critter from "../assets/critter.png";
-import facespace from "../assets/facespace.png";
-import shopfit from "../assets/shopfit.png";
-import rainingNyanCats from "../assets/raining-nyan-cats.png";
-import slingair from "../assets/slingair.png";
+import Drawer from '@mui/material/Drawer';
+import { projectDataOne } from "../projectData";
+import { projectDataTwo } from "../projectData";
 
 const Projects = () => {
 
+    const [show, setShow] = useState(null);
+    const [project, setProject] = useState(null);
+
     const { projectsSection, scrollToContact } = useContext(Context);
+
+    const [state, setState] = useState({ right: false, });
+
+    const toggleDrawer = (anchor, open) => (event) => {
+        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+            return;
+        }
+
+        setState({ ...state, [anchor]: open });
+    };
+
+    const list = (anchor) => (
+        <Box
+            role="presentation"
+            onKeyDown={toggleDrawer(anchor, false)}
+        >
+            {projectDataOne.map((item, index) => {
+                return (
+                <div key={index}>
+                    {item.shortName === project &&
+                    <>
+            <h1>{item.name}</h1>
+            <p>{item.description}</p>
+            <img src={item.imgSrc} style={{width: "400px"}} />
+            <h2>About</h2>
+            <p>{item.about}</p>
+            <h2>Technologies</h2>
+            {item.technologies.map((item, index) => {
+                return <button key={index}>{item}</button>
+            })}
+            <h2>Website</h2>
+            <p>{item?.website}</p>
+            <h2>Demo</h2>
+            <p>{item?.demo}</p>
+            <h2>Github</h2>
+            <p>{item?.github}</p>
+            </>
+                    }
+            </div>
+                )
+            })}
+        </Box>
+    );
+
+    console.log(project)
 
     return (
         <Wrapper ref={projectsSection}>
             <Container>
                 <Title>My Projects.</Title>
                 <ColumnsDiv>
+
                     <ColumnOne>
-                        <ProjectDiv>
-                            <ProjectTextDiv>
-                                <ProjectTitle>The Shoestring Traveller</ProjectTitle>
-                                <ProjectDescription>Travel website where users can sign in to favourite and comment on travel tip articles.</ProjectDescription>
-                                <ProjectTechDiv>
-                                    <ProjectTech>React</ProjectTech>
-                                    <ProjectTech>Node.js</ProjectTech>
-                                    <ProjectTech>Express.js</ProjectTech>
-                                    <ProjectTech>MongoDB</ProjectTech>
-                                </ProjectTechDiv>
-                            </ProjectTextDiv>
-                            <Image src={theShoestringTraveller} />
-                        </ProjectDiv>
-                        <ProjectDiv>
-                            <ProjectTextDiv>
-                                <ProjectTitle>slingAir</ProjectTitle>
-                                <ProjectDescription></ProjectDescription>
-                                <ProjectTechDiv>
-                                    <ProjectTech>React</ProjectTech>
-                                    <ProjectTech>Node.js</ProjectTech>
-                                    <ProjectTech>Express.js</ProjectTech>
-                                    <ProjectTech>MongoDB</ProjectTech>
-                                </ProjectTechDiv>
-                            </ProjectTextDiv>
-                            <Image src={slingair} />
-                        </ProjectDiv>
-                        <ProjectDiv>
-                            <ProjectTextDiv>
-                                <ProjectTitle>Facespace</ProjectTitle>
-                                <ProjectDescription></ProjectDescription>
-                                <ProjectTechDiv>
-                                    <ProjectTech>React</ProjectTech>
-                                    <ProjectTech>Node.js</ProjectTech>
-                                    <ProjectTech>Express.js</ProjectTech>
-                                </ProjectTechDiv>
-                            </ProjectTextDiv>
-                            <Image src={facespace} />
-                        </ProjectDiv>
-                        <ProjectDiv>
-                            <ProjectTextDiv>
-                                <ProjectTitle>Matthew Langmuir Tutoring</ProjectTitle>
-                                <ProjectDescription></ProjectDescription>
-                                <ProjectTechDiv>
-                                    <ProjectTech>React</ProjectTech>
-                                </ProjectTechDiv>
-                            </ProjectTextDiv>
-                            <Image src={matthewLangmuirTutoring} />
-                        </ProjectDiv>
+                        {projectDataOne.map((project, index) => {
+                        return ( <div key={index}>
+                            {['left'].map((anchor) => (
+                            <div key={anchor}>
+                                <ProjectDiv
+                                    onClick={toggleDrawer(anchor, true)}
+                                    onMouseOver={() => setShow(project.shortName)}
+                                    onMouseLeave={() => {
+                                        setShow(null);
+                                        setProject(project.shortName);
+                                    }}
+                                >
+                                    {show === project.shortName &&
+                                    <ProjectTextDiv>
+                                        <ProjectTitle>{project.name}</ProjectTitle>
+                                        <ProjectDescription>{project.description}</ProjectDescription>
+                                        <ProjectTechDiv>
+                                            {project.technologies.map((technology, index) => {
+                                                return <ProjectTech key={index}>{technology}</ProjectTech>
+                                            })}
+                                        </ProjectTechDiv>
+                                    </ProjectTextDiv>
+                                    }
+                                    <Image
+                                        src={project.imgSrc}
+                                        style={{ filter: show === project.shortName && "brightness(35%)"}}
+                                    />
+                                </ProjectDiv>
+                                <Drawer
+                                    anchor={anchor}
+                                    open={state[anchor]}
+                                    onClose={toggleDrawer(anchor, false)}
+                                >
+                                    {list(anchor)}
+                                </Drawer>
+                            </div>
+                            ))}
+                        </div>
+                        )
+                        })}
                     </ColumnOne>
+
                     <ColumnTwo>
-                        <ProjectDiv>
-                            <ProjectTextDiv>
-                                <ProjectTitle>Shopfit</ProjectTitle>
-                                <ProjectDescription></ProjectDescription>
-                                <ProjectTechDiv>
-                                    <ProjectTech>React</ProjectTech>
-                                    <ProjectTech>Node.js</ProjectTech>
-                                    <ProjectTech>Express.js</ProjectTech>
-                                    <ProjectTech>MongoDB</ProjectTech>
-                                </ProjectTechDiv>
-                            </ProjectTextDiv>
-                            <Image src={shopfit} />
-                        </ProjectDiv>
-                        <ProjectDiv>
-                            <ProjectTextDiv>
-                                <ProjectTitle>Critter</ProjectTitle>
-                                <ProjectDescription></ProjectDescription>
-                                <ProjectTechDiv>
-                                    <ProjectTech>React</ProjectTech>
-                                </ProjectTechDiv>
-                            </ProjectTextDiv>
-                            <Image src={critter} />
-                        </ProjectDiv>
-                        <ProjectDiv>
-                            <ProjectTextDiv>
-                                <ProjectTitle>Raining Nyan Cats</ProjectTitle>
-                                <ProjectDescription></ProjectDescription>
-                                <ProjectTechDiv>
-                                    <ProjectTech>JavaScript</ProjectTech>
-                                    <ProjectTech>HTML</ProjectTech>
-                                    <ProjectTech>CSS</ProjectTech>
-                                </ProjectTechDiv>
-                            </ProjectTextDiv>
-                            <Image src={rainingNyanCats} />
-                        </ProjectDiv>
+                        {projectDataTwo.map((project, index) => {
+                            return ( <div key={index}>
+                                {['right'].map((anchor) => (
+                                <div key={anchor}>
+                                    <ProjectDiv
+                                        onClick={toggleDrawer(anchor, true)}
+                                        onMouseOver={() => setShow(project.shortName)}
+                                        onMouseLeave={() => setShow(null)}
+                                    >
+                                        {show === project.shortName &&
+                                        <ProjectTextDiv>
+                                            <ProjectTitle>{project.name}</ProjectTitle>
+                                            <ProjectDescription>{project.description}</ProjectDescription>
+                                            <ProjectTechDiv>
+                                                {project.technologies.map((technology, index) => {
+                                                    return <ProjectTech key={index}>{technology}</ProjectTech>
+                                                })}
+                                            </ProjectTechDiv>
+                                        </ProjectTextDiv>
+                                        }
+                                        <Image
+                                            src={project.imgSrc}
+                                            style={{ filter: show === project.shortName && "brightness(35%)"}}
+                                        />
+                                    </ProjectDiv>
+                                    <Drawer
+                                        anchor={anchor}
+                                        open={state[anchor]}
+                                        onClose={toggleDrawer(anchor, false)}
+                                    >
+                                        {list(anchor)}
+                                    </Drawer>
+                                </div>
+                                ))}
+                            </div>
+                            )
+                            })}
                     </ColumnTwo>
+
                 </ColumnsDiv>
                 <ContactMe onClick={scrollToContact}>Drop Me A Line</ContactMe>
             </Container>
@@ -149,7 +190,7 @@ const ProjectDiv = styled.div`
     margin-top: 30px;
     display: flex;
     align-items: flex-end;
-    width: 500px;
+    width: 100%;
 
     :hover {
         cursor: pointer;
@@ -160,17 +201,18 @@ const ProjectTextDiv = styled.div`
     position: absolute;
     margin-bottom: 20px;
     margin-left: 20px;
-    width: 500px;
+    width: 40%;
+    z-index: 1;
 `;
 
 const ProjectTitle = styled.h2`
     width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 `;
 
 const ProjectDescription = styled.p`
     width: 80%;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 `;
 
 const ProjectTechDiv = styled.div`
@@ -188,10 +230,6 @@ const ProjectTech = styled.div`
 const Image = styled.img`
     width: 95%;
     border-radius: 8px;
-
-    :hover {
-        filter: brightness(50%);
-    }
 `;
 
 const ContactMe = styled.div`
@@ -210,6 +248,14 @@ const ContactMe = styled.div`
         cursor: pointer;
         opacity: 70%;
     }
+`;
+
+const Box = styled.div`
+    width: 600px;
+    height: 100vh;
+    color: white;
+    background-color: black;
+    opacity: 90%;
 `;
 
 export default Projects;

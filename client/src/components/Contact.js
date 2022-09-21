@@ -1,15 +1,48 @@
 import styled from "styled-components";
-import { useContext } from "react";
+import { useContext, useRef, useState } from "react";
 import { Context } from "../Context";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
 
     const { contactSection } = useContext(Context);
 
+    const form = useRef();
+
+    const [sendSuccess, setSendSuccess] = useState(false);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // params: ('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+        emailjs.sendForm("gmail", "template_u4cblfw", form.current, "wVbfUlRQ5_wlcZvJ0")
+            .then((result) => {
+                setSendSuccess(true);
+            }, (error) => {
+                alert("Sorry! An error has occurred. Please try again!");
+            });
+    }
+
     return (
         <Wrapper ref={contactSection}>
             <Container>
                 <Title>Contact Me.</Title>
+                    {sendSuccess && <Confirmation><p>Thank you for contacting me. I will be in touch as soon as possible!</p></Confirmation>}
+                    <Form onSubmit={handleSubmit} ref={form} style={{display: sendSuccess === true && "none"}}>
+                        <Description>Drop me a line or shoot me an email directly at matthewlangmuir@hotmail.com</Description>
+                        <InputDiv>
+                            <Input type="name" placeholder="Name" name="name" required />
+                        </InputDiv>
+                        <InputDiv>
+                            <Input type="email" placeholder="Email" name="email" required />
+                        </InputDiv>
+                        <InputDiv>
+                            <TextArea placeholder="Message" name="message" required></TextArea>
+                        </InputDiv>
+                        <InputDiv>
+                            <Submit type="submit" />
+                        </InputDiv>
+                    </Form>
             </Container>
         </Wrapper>
     );
@@ -17,12 +50,10 @@ const Contact = () => {
 
 const Wrapper = styled.div`
     width: 100%;
-    height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-    align-items: flex-start;
     background-color: black;
+    padding-bottom: 95px;
 `;
 
 const Container = styled.div`
@@ -30,8 +61,74 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-    color: white;
-    margin-top: 200px;
+    margin-top: 100px;
+`;
+
+const Confirmation = styled.div`
+    z-index: 6;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin-top: 50px;
+`;
+
+const Form = styled.form`
+    z-index: 3;
+    max-width: 500px;
+    font-size: 18px;
+    text-shadow: 1px 1px black;
+    border-radius: 25px;
+`;
+
+const Description = styled.p`
+    font-size: 18px;
+    text-align: justify;
+    margin-top: 30px;
+`;
+
+const InputDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+`;
+
+const Input = styled.input`
+    width: 98%;
+    height: 25px;
+    padding: 10px;
+    display: flex;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    resize: none;
+    color: black;
+`;
+
+const TextArea = styled.textarea`
+    width: 98%;
+    height: 100px;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    resize: none;
+    color: black;
+`;
+
+const Submit = styled.input`
+    height: 45px;
+    width: 100px;
+    background-color: black;
+    font-size: 18px;
+    border: 1px solid white;
+    border-radius: 4px;
+
+    :hover {
+        cursor: pointer;
+        opacity: 75%;
+    }
 `;
 
 export default Contact;

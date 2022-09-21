@@ -35,18 +35,19 @@ const Home = () => {
             </Container>
         </Wrapper>
         <BackgroundText>Hello<p style={{fontSize: "380px"}}>World</p></BackgroundText>
+        <BlackBackground />
         </>
     );
 }
 
 const Wrapper = styled.div`
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100vh;
-    z-index: 1;
-    background-color: black;
+    background-color: transparent;
 `;
 
 const Container = styled.div`
@@ -57,7 +58,6 @@ const Container = styled.div`
 const Intro = styled.p`
     font-size: 24px;
     background-color: transparent;
-
 `;
 
 const Name = styled.h1`
@@ -121,7 +121,16 @@ const BackgroundText = styled.div`
     letter-spacing: 25px;
     overflow: hidden;
     cursor: default;
+    z-index: 1;
+    background-color: transparent;
+`;
+
+const BlackBackground = styled.div`
+    background-color: black;
     z-index: 0;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
 `;
 
 export default Home;
