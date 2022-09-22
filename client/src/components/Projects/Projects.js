@@ -49,6 +49,9 @@ const Projects = () => {
                                                         setShow(null);
                                                         setProject(item.shortName);
                                                     }}
+                                                    onTouchEnd={() => {
+                                                        setProject(item.shortName);
+                                                    }}
                                                 >
                                                     {show === item.shortName &&
                                                     <ProjectTextDiv>
@@ -93,6 +96,9 @@ const Projects = () => {
                                                     onMouseOver={() => setShow(item.shortName)}
                                                     onMouseLeave={() => {
                                                         setShow(null);
+                                                        setProject(item.shortName);
+                                                    }}
+                                                    onTouchEnd={() => {
                                                         setProject(item.shortName);
                                                     }}
                                                 >
