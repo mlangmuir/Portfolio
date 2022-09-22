@@ -13,7 +13,8 @@ const About = () => {
                 <Title>About Me.</Title>
                 <PhotoTextDiv>
                     <div>
-                        <Paragraph>Hello, my name is Matthew and I am passionate about creating web applications and learning new technologies. Through projects done at Concordia University and Wonders Academy, I have gained the capacity to build full-stack applications that offer an exceptional user experience.</Paragraph>
+                        <MobileAboutPic src={aboutPic} alt="Photo of Matthew Langmuir" />
+                        <Paragraph>Hello, my name is Matthew and I am passionate about creating web applications and learning new technologies. Through projects done at Concordia University and Wonders Academy, I have gained the capacity to build full-stack applications that offer exceptional user experiences.</Paragraph>
                         <Paragraph>Here are the technologies that I have used for my projects:</Paragraph>
                         <ListDiv>
                             <ColumnOne>
@@ -39,7 +40,6 @@ const About = () => {
 
 const Wrapper = styled.div`
     width: 100%;
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,6 +50,10 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
     width: 60%;
+
+    @media (max-width: 1200px) {
+        width: 80%;
+    }
 `;
 
 const Title = styled.h1`
@@ -61,6 +65,10 @@ const PhotoTextDiv = styled.div`
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+
+    @media (max-width: 900px) {
+        flex-direction: column;
+    }
 `;
 
 const ListDiv = styled.div`
@@ -100,10 +108,28 @@ const Paragraph = styled.p`
     margin-right: 50px;
     text-align: justify;
     margin-bottom: 20px;
+
+    @media (max-width: 600px) {
+        text-align: left;
+    }
 `;
 
 const AboutPic = styled.img`
     height: 425px;
+
+    @media (max-width: 900px) {
+        display: none;
+    }
+`;
+
+const MobileAboutPic = styled.img`
+    display: none;
+
+    @media (max-width: 900px) {
+        display: block;
+        width: 50%;
+        margin-bottom: 30px;
+    }
 `;
 
 export default About;
