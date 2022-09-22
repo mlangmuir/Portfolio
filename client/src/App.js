@@ -2,7 +2,7 @@ import GlobalStyle from "./globalStyle";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import About from "./components/About";
-import Projects from "./components/Projects";
+import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import styled from "styled-components";

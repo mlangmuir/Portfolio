@@ -64,12 +64,20 @@ const Name = styled.h1`
     font-size: 72px;
     margin-top: 20px;
     background-color: transparent;
+
+    @media (max-width: 530px) {
+        font-size: 52px;
+    }
 `;
 
 const Description = styled.p`
     font-size: 24px;
     margin-top: 20px;
     background-color: transparent;
+
+    @media (max-width: 530px) {
+        font-size: 20px;
+    }
 `;
 
 const ReadMore = styled.div`
