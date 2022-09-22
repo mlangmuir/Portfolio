@@ -24,10 +24,8 @@ const Header = () => {
                     <Nav onClick={scrollToAbout}>About</Nav>
                     <Nav onClick={scrollToProjects}>Projects</Nav>
                     <Nav onClick={scrollToContact}>Contact</Nav>
-                    <Resume>
-                        <A href="https://drive.google.com/file/d/1lk-1RKra021oQMynGT0iTYEIIx_X4_tM/view?usp=sharing" target="_blank" rel="noreferrer">
-                            Resume
-                        </A>
+                    <Resume href="https://drive.google.com/file/d/1lk-1RKra021oQMynGT0iTYEIIx_X4_tM/view?usp=sharing" target="_blank" rel="noreferrer">
+                        Resume
                     </Resume>
                 </NavDiv>
                 <Hamburger src={hamburger} onClick={handleClickBurger}/>
@@ -68,11 +66,14 @@ const Header = () => {
                         >
                             Contact
                         </MobileLink>
-                        <Resume style={{margin: "30px 0", fontSize: "18px", backgroundColor: "#202124"}}>
-                            <A href="https://drive.google.com/file/d/1lk-1RKra021oQMynGT0iTYEIIx_X4_tM/view?usp=sharing" target="_blank" rel="noreferrer">
+                            <Resume
+                                href="https://drive.google.com/file/d/1lk-1RKra021oQMynGT0iTYEIIx_X4_tM/view?usp=sharing"
+                                target="_blank"
+                                rel="noreferrer"
+                                style={{margin: "30px 0", fontSize: "18px", backgroundColor: "#202124"}}
+                            >
                                 Resume
-                            </A>
-                        </Resume>
+                            </Resume>
                     </MobileNavDiv>
                 </MobileContainer>
             </MobileWrapper>
@@ -135,12 +136,13 @@ const Nav = styled.nav`
     }
 `;
 
-const Resume = styled.div`
+const Resume = styled.a`
+    text-decoration: none;
+    height: 40px;
+    width: 90px;
     background-color: #00001c;
     color: white;
     border: 1px solid white;
-    height: 40px;
-    width: 90px;
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -150,10 +152,6 @@ const Resume = styled.div`
         cursor: pointer;
         transform: scale(1.05);
     }
-`;
-
-const A = styled.a`
-    text-decoration: none;
 `;
 
 const MobileWrapper = styled.div`
