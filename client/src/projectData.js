@@ -1,5 +1,6 @@
-export const projectDataOne = [
+export const projectData = [
     {
+        column: 1,
         shortName: "shoestring",
         name: "The Shoestring Traveller",
         imgSrc: "https://res.cloudinary.com/didxdrmjj/image/upload/v1663745378/Portfolio/the-shoestring-traveller_etc1bk.png",
@@ -11,6 +12,7 @@ export const projectDataOne = [
         github: "https://github.com/mlangmuir/the-shoestring-traveller",
     },
     {
+        column: 1,
         shortName: "slingair",
         name: "slingAir",
         imgSrc: "https://res.cloudinary.com/didxdrmjj/image/upload/v1663745378/Portfolio/slingair_ntda0j.png",
@@ -21,6 +23,7 @@ export const projectDataOne = [
         github: "https://github.com/mlangmuir/slingair-ticket-booker",
     },
     {
+        column: 1,
         shortName: "facespace",
         name: "Facespace",
         imgSrc: "https://res.cloudinary.com/didxdrmjj/image/upload/v1663745379/Portfolio/facespace_uflefj.png",
@@ -31,6 +34,7 @@ export const projectDataOne = [
         github: "https://github.com/mlangmuir/facespace",
     },
     {
+        column: 1,
         shortName: "tutoring",
         name: "Matthew Langmuir Tutoring",
         imgSrc: "https://res.cloudinary.com/didxdrmjj/image/upload/v1663745378/Portfolio/matthew-langmuir-tutoring_i2zzw0.png",
@@ -40,10 +44,8 @@ export const projectDataOne = [
         website: "https://www.tutoring.matthewlangmuir.com/",
         github: "https://github.com/mlangmuir/matthew-langmuir-tutoring",
     },
-]
-
-export const projectDataTwo = [
     {
+        column: 2,
         shortName: "shopfit",
         name: "Shopfit",
         imgSrc: "https://res.cloudinary.com/didxdrmjj/image/upload/v1663745378/Portfolio/shopfit_mtynmn.png",
@@ -54,6 +56,7 @@ export const projectDataTwo = [
         github: "https://github.com/mlangmuir/shopfit-e-commerce",
     },
     {
+        column: 2,
         shortName: "critter",
         name: "Critter",
         imgSrc: "https://res.cloudinary.com/didxdrmjj/image/upload/v1663745378/Portfolio/critter_qndgst.png",
@@ -64,6 +67,7 @@ export const projectDataTwo = [
         github: "https://github.com/mlangmuir/critter-cat-twitter-clone",
     },
     {
+        column: 2,
         shortName: "nyan-cats",
         name: "Raining Nyan Cats",
         imgSrc: "https://res.cloudinary.com/didxdrmjj/image/upload/v1663745378/Portfolio/raining-nyan-cats_oilyl5.png",
