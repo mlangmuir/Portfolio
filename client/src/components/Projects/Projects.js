@@ -147,6 +147,10 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
     width: 70%;
+
+    @media (max-width: 700px) {
+        width: 90%;
+    }
 `;
 
 const Title = styled.h1`
@@ -157,6 +161,10 @@ const Title = styled.h1`
 const ColumnsDiv = styled.div`
     display: flex;
     justify-content: space-around;
+
+    @media (max-width: 1025px) {
+        flex-direction: column;
+    }
 `;
 
 const ColumnOne = styled.div`
@@ -186,16 +194,44 @@ const ProjectTextDiv = styled.div`
     margin-left: 20px;
     width: 40%;
     z-index: 1;
+
+    @media (max-width: 1025px) {
+        width: 80%;
+    }
 `;
 
 const ProjectTitle = styled.h2`
     width: 100%;
     margin-bottom: 5px;
+
+    @media (max-width: 1200px) {
+        font-size: 20px;
+    }
+
+    @media (max-width: 1025px) {
+        font-size: 28px;
+    }
+
+    @media (max-width: 525px) {
+        font-size: 18px;
+    }
 `;
 
 const ProjectDescription = styled.p`
     width: 80%;
     margin-bottom: 5px;
+
+    @media (max-width: 1200px) {
+        font-size: 14px;
+    }
+
+    @media (max-width: 1025px) {
+        font-size: 16px;
+    }
+
+    @media (max-width: 525px) {
+        font-size: 14px;
+    }
 `;
 
 const ProjectTechDiv = styled.div`
@@ -208,6 +244,21 @@ const ProjectTech = styled.div`
     padding: 5px 10px;
     margin-right: 10px;
     font-size: 16px;
+
+    @media (max-width: 1200px) {
+        font-size: 12px;
+        margin-right: 3px;
+    }
+
+    @media (max-width: 1025px) {
+        font-size: 16px;
+        margin-right: 10px;
+    }
+
+    @media (max-width: 525px) {
+        font-size: 12px;
+        margin-right: 1px;
+    }
 `;
 
 const Image = styled.img`
@@ -238,6 +289,14 @@ const Box = styled.div`
     height: 500%;
     background-color: #202124;
     padding: 40px;
+
+    @media (max-width: 700px) {
+        width: 400px;
+    }
+
+    @media (max-width: 500px) {
+        width: 275px;
+    }
 `;
 
 export default Projects;

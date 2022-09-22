@@ -58,6 +58,14 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
     width: 40%;
+
+    @media (max-width: 990px) {
+        width: 60%;
+    }
+
+    @media (max-width: 660px) {
+        width: 80%;
+    }
 `;
 
 const Title = styled.h1`
@@ -84,8 +92,11 @@ const Form = styled.form`
 
 const Description = styled.p`
     font-size: 18px;
-    text-align: justify;
     margin-top: 30px;
+
+    @media (max-width: 370px) {
+        font-size: 16px;
+    }
 `;
 
 const InputDiv = styled.div`

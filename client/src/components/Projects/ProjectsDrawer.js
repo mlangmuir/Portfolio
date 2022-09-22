@@ -98,6 +98,10 @@ const Name = styled.h2`
     font-size: 28px;
     border-top: 0.5px solid grey;
     padding-top: 30px;
+
+    @media (max-width: 500px) {
+        font-size: 24px;
+    }
 `;
 
 const DescriptionText = styled.p`
@@ -118,6 +122,7 @@ const AboutTitle = styled.h3`
 
 const AboutText = styled.p`
     font-size: 16px;
+    text-align: justify;
 `;
 
 const TechTitle = styled.h3`
@@ -138,6 +143,15 @@ const TechText = styled.div`
     padding: 0 10px;
     font-size: 16px;
     margin-right: 10px;
+
+    @media (max-width: 700px) {
+        font-size: 14px;
+    }
+
+    @media (max-width: 500px) {
+        padding: 0 5px;
+        border-radius: 4px;
+    }
 `;
 
 const WebsiteTitle = styled.h3`
@@ -148,6 +162,14 @@ const WebsiteTitle = styled.h3`
 
 const WebsiteText = styled.a`
     font-size: 16px;
+
+    @media (max-width: 700px) {
+        font-size: 14px;
+    }
+
+    @media (max-width: 500px) {
+        font-size: 11px;
+    }
 `;
 
 const DemoTitle = styled.h3`
@@ -158,6 +180,14 @@ const DemoTitle = styled.h3`
 
 const DemoText = styled.a`
     font-size: 16px;
+
+    @media (max-width: 700px) {
+        font-size: 14px;
+    }
+
+    @media (max-width: 500px) {
+        font-size: 11px;
+    }
 `;
 
 const GithubTitle = styled.h3`
@@ -168,6 +198,14 @@ const GithubTitle = styled.h3`
 
 const GithubText = styled.a`
     font-size: 16px;
+
+    @media (max-width: 700px) {
+        font-size: 14px;
+    }
+
+    @media (max-width: 500px) {
+        font-size: 11px;
+    }
 `;
 
 const Icon = styled.img`

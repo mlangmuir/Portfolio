@@ -110,7 +110,7 @@ const Paragraph = styled.p`
     margin-bottom: 20px;
 
     @media (max-width: 600px) {
-        text-align: left;
+        margin-right: 0;
     }
 `;
 
@@ -127,8 +127,12 @@ const MobileAboutPic = styled.img`
 
     @media (max-width: 900px) {
         display: block;
-        width: 50%;
+        width: 400px;
         margin-bottom: 30px;
+    }
+
+    @media (max-width: 500px) {
+        width: 300px;
     }
 `;
 
