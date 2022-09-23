@@ -24,7 +24,7 @@ const Header = () => {
                     <Nav onClick={scrollToAbout}>About</Nav>
                     <Nav onClick={scrollToProjects}>Projects</Nav>
                     <Nav onClick={scrollToContact}>Contact</Nav>
-                    <Resume href="https://drive.google.com/file/d/1lk-1RKra021oQMynGT0iTYEIIx_X4_tM/view?usp=sharing" target="_blank" rel="noreferrer">
+                    <Resume href="https://drive.google.com/file/d/18HMsqpqT9xI11gJEu1Pnum0dwqsah2UD/view?usp=sharing" target="_blank" rel="noreferrer">
                         Resume
                     </Resume>
                 </NavDiv>
