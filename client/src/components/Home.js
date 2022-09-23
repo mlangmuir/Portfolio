@@ -21,7 +21,7 @@ const Home = () => {
                     <a href="https://github.com/mlangmuir" target="_blank" rel="noreferrer">
                         <Logo src={Github} alt="Github logo" />
                     </a>
-                    <a href="www.linkedin.com/in/matthewlangmuir" target="_blank" rel="noreferrer">
+                    <a href="https://www.linkedin.com/in/matthewlangmuir" target="_blank" rel="noreferrer">
                         <Logo src={Linkedin} alt="Linkedin logo" />
                     </a>
                     <a href="https://twitter.com/codeMatt0101" target="_blank" rel="noreferrer">
