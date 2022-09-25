@@ -50,7 +50,7 @@ export const projectData = [
         name: "Shopfit",
         imgSrc: "https://res.cloudinary.com/didxdrmjj/image/upload/v1663745378/Portfolio/shopfit_mtynmn.png",
         description: "E-commerce website concept.",
-        about: "This full-stack application allows users to browse through 348 different electronic gadgets. The site features a search bar and allows users filter products based on price, category, body location and availability.",
+        about: "This full-stack application allows users to browse through 348 different electronic gadgets. The site features a search bar and allows users to filter products based on price, category, body location and availability.",
         technologies: ["React", "Node.js", "Express.js", "MongoDB"],
         demo: "https://www.youtube.com/watch?v=fYlcX2Ul3h0&t=1s&ab_channel=MatthewLangmuir",
         github: "https://github.com/mlangmuir/shopfit-e-commerce",

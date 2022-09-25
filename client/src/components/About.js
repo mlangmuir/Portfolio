@@ -14,7 +14,7 @@ const About = () => {
                 <PhotoTextDiv>
                     <div>
                         <MobileAboutPic src={aboutPic} alt="Photo of Matthew Langmuir" />
-                        <Paragraph>Hello, my name is Matthew and I am passionate about creating web applications and learning new technologies. Through projects done at Concordia University and Wonders Academy, I have gained the capacity to build full-stack applications that offer exceptional user experiences.</Paragraph>
+                        <Paragraph>Hello, my name is Matthew and I am passionate about creating web applications and learning new technologies. Through projects done as a student at Concordia University and as an employee at Wonders Academy, I have gained the capacity to build full-stack applications that offer exceptional user experiences.</Paragraph>
                         <Paragraph>Here are the technologies that I have used for my projects:</Paragraph>
                         <ListDiv>
                             <ColumnOne>
