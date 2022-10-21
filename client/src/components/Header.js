@@ -24,7 +24,7 @@ const Header = () => {
                     <Nav onClick={scrollToAbout}>About</Nav>
                     <Nav onClick={scrollToProjects}>Projects</Nav>
                     <Nav onClick={scrollToContact}>Contact</Nav>
-                    <Resume href="https://drive.google.com/file/d/18HMsqpqT9xI11gJEu1Pnum0dwqsah2UD/view?usp=sharing" target="_blank" rel="noreferrer">
+                    <Resume href="https://drive.google.com/file/d/18HMsqpqT9xI11gJEu1Pnum0dwqsah2UD/view?usp=sharing" target="_blank" rel="noreferrer" className="resumeButton">
                         Resume
                     </Resume>
                 </NavDiv>
@@ -71,6 +71,7 @@ const Header = () => {
                                 target="_blank"
                                 rel="noreferrer"
                                 style={{margin: "30px 0", fontSize: "18px", backgroundColor: "#202124"}}
+                                className="resumeButton"
                             >
                                 Resume
                             </Resume>
