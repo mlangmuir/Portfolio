@@ -67,7 +67,7 @@ const Header = () => {
                             Contact
                         </MobileLink>
                             <Resume
-                                href="https://drive.google.com/file/d/18HMsqpqT9xI11gJEu1Pnum0dwqsah2UD/view?usp=sharing"
+                                href="https://drive.google.com/file/d/1U2_FIiHyVWl6pxQYquR4m5LlKei1BF3a/view?usp=sharing"
                                 target="_blank"
                                 rel="noreferrer"
                                 style={{margin: "30px 0", fontSize: "18px", backgroundColor: "#202124"}}
