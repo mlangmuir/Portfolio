@@ -7,7 +7,6 @@ export const projectData = [
         description: "Travel website featuring articles on amazing destinations around the world.",
         about: "This travel website features articles about the Shoestring Traveller's adventures around the world. It includes some budget travel tips and numerous breathtaking photos. The app also allows users to log in and comment on their favourite articles.",
         technologies: ["React", "Node.js", "Express.js", "MongoDB"],
-        website: "https://theshoestringtraveller.matthewlangmuir.com",
         demo: "https://www.youtube.com/watch?v=0gZP3fPHipo&t=326s&ab_channel=MatthewLangmuir",
         github: "https://github.com/mlangmuir/the-shoestring-traveller",
     },
