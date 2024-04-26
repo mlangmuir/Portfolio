@@ -24,7 +24,7 @@ const Header = () => {
                     <Nav onClick={scrollToAbout}>About</Nav>
                     <Nav onClick={scrollToProjects}>Projects</Nav>
                     <Nav onClick={scrollToContact}>Contact</Nav>
-                    <Resume href="https://drive.google.com/file/d/1th7hBPZ0ezQ0BNi0PQlorrciKUAZvNkx/view?usp=sharing" target="_blank" rel="noreferrer" className="resumeButton">
+                    <Resume href="https://drive.google.com/file/d/1_RJvuIuZkrJi6Wb8FTAxGKCJP0D0N3nJ/view?usp=sharing" target="_blank" rel="noreferrer" className="resumeButton">
                         Resume
                     </Resume>
                 </NavDiv>
@@ -67,7 +67,7 @@ const Header = () => {
                             Contact
                         </MobileLink>
                             <Resume
-                                href="https://drive.google.com/file/d/1th7hBPZ0ezQ0BNi0PQlorrciKUAZvNkx/view?usp=sharing"
+                                href="https://drive.google.com/file/d/1_RJvuIuZkrJi6Wb8FTAxGKCJP0D0N3nJ/view?usp=sharing"
                                 target="_blank"
                                 rel="noreferrer"
                                 style={{margin: "30px 0", fontSize: "18px", backgroundColor: "#202124"}}

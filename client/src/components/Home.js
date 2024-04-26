@@ -16,7 +16,7 @@ const Home = () => {
             <Container>
                 <Intro>Hello, I'm</Intro>
                 <Name>Matthew Langmuir.</Name>
-                <Description>Full-stack web developer, avid traveller and sports enthusiast.</Description>
+                <Description>Software developer, avid traveller and sports enthusiast.</Description>
                 <LogoDiv>
                     <a href="https://github.com/mlangmuir" target="_blank" rel="noreferrer">
                         <Logo src={Github} alt="Github logo" />

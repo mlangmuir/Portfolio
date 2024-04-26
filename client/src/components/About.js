@@ -14,17 +14,21 @@ const About = () => {
                 <PhotoTextDiv>
                     <div>
                         <MobileAboutPic src={aboutPic} alt="Photo of Matthew Langmuir" />
-                        <Paragraph>Hello, my name is Matthew. I am a full-stack web developer interested in building applications that help businesses and organizations thrive in the digital world.</Paragraph>
-                        <Paragraph>Here are the technologies that I have used for my projects:</Paragraph>
+                        <Paragraph>Hello, my name is Matthew. I am a software developer specializing in digital analytics and full-stack web development.</Paragraph>
+                        <Paragraph>Here are the technologies I'm proficient in:</Paragraph>
                         <ListDiv>
                             <ColumnOne>
-                                <li>React</li>
+                                <li>JavaScript</li>
+                                <li>React.js</li>
+                                <li>Vue.js</li>
                                 <li>Node.js</li>
                                 <li>Express.js</li>
                                 <li>MongoDB</li>
                             </ColumnOne>
                             <ColumnTwo>
-                                <li>JavaScript</li>
+                                <li>SQL</li>
+                                <li>Adobe Experience Platform</li>
+                                <li>Google Cloud Platform</li>
                                 <li>HTML</li>
                                 <li>CSS</li>
                             </ColumnTwo>
@@ -74,6 +78,10 @@ const PhotoTextDiv = styled.div`
 const ListDiv = styled.div`
     display: flex;
     line-height: 30px;
+
+    @media (max-width: 1010px) {
+        flex-direction: column;
+    }
 `;
 
 const ColumnOne = styled.div`
@@ -82,6 +90,10 @@ const ColumnOne = styled.div`
 
 const ColumnTwo = styled.div`
     margin-left: 35px;
+
+    @media (max-width: 1010px) {
+        margin-left: 0;
+    }
 `;
 
 const SeeProjects = styled.div`
