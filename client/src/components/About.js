@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import aboutPic from "../assets/new-portfolio-photo.jpg"
+import aboutPic from "../assets/new-portfolio-photo.png"
 import { Context } from "../Context";
 
 const About = () => {

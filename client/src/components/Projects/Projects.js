@@ -4,6 +4,12 @@ import { Context } from "../../Context";
 import Drawer from '@mui/material/Drawer';
 import { projectData } from "../../projectData";
 import ProjectsDrawer from "./ProjectsDrawer";
+import projectImg1 from "../../assets/the-shoestring-traveller.jpeg";
+import projectImg2 from "../../assets/slingair.jpeg";
+import projectImg3 from "../../assets/raining-nyan-cats.jpeg";
+import projectImg4 from "../../assets/shopfit.jpeg";
+import projectImg5 from "../../assets/facespace.jpeg";
+import projectImg6 from "../../assets/critter.jpeg";
 
 const Projects = () => {
 
@@ -12,6 +18,15 @@ const Projects = () => {
     const [show, setShow] = useState(null);
     const [state, setState] = useState({ right: false, });
     const [project, setProject] = useState("");
+
+    const imageMap = {
+        1: projectImg1,
+        2: projectImg2,
+        3: projectImg3,
+        4: projectImg4,
+        5: projectImg5,
+        6: projectImg6
+    };
 
     const toggleDrawer = (anchor, open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -65,7 +80,8 @@ const Projects = () => {
                                                     </ProjectTextDiv>
                                                     }
                                                     <Image
-                                                        src={item.imgSrc}
+                                                        src={imageMap[item.id]}
+                                                        alt={item.name}
                                                         style={{ filter: show === item.shortName && "brightness(35%)"}}
                                                     />
                                                 </ProjectDiv>
@@ -116,7 +132,8 @@ const Projects = () => {
                                                     </ProjectTextDiv>
                                                     }
                                                     <Image
-                                                        src={item.imgSrc}
+                                                        src={imageMap[item.id]}
+                                                        alt={item.name}
                                                         style={{ filter: show === item.shortName && "brightness(35%)"}}
                                                     />
                                                 </ProjectDiv>
