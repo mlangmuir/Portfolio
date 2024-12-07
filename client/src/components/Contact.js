@@ -15,7 +15,7 @@ const Contact = () => {
         e.preventDefault();
 
         // params: ('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
-        emailjs.sendForm("gmail", "template_u4cblfw", form.current, "wVbfUlRQ5_wlcZvJ0")
+        emailjs.sendForm("gmail", "template_wxm3g3r", form.current, "wVbfUlRQ5_wlcZvJ0")
             .then((result) => {
                 setSendSuccess(true);
             }, (error) => {
